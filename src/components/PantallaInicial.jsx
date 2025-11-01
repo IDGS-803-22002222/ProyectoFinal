@@ -1,5 +1,5 @@
 import "../App.css";
-
+import "../output.css";
 export const PantallaInicial = ({ onContinuar }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center p-4">

@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { PantallaInicial } from "./components/PantallaInicial";
-
+import "./output.css";
 function App() {
   const [count, setCount] = useState(0);
 
