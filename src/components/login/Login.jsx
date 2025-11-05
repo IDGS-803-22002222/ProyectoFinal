@@ -236,7 +236,7 @@ const Login = ({ onLogin, onVolver }) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all text-gray-900 font-medium placeholder-gray-400 bg-gray-50 focus:bg-white"
-                  placeholder="tu@correo.com"
+                  placeholder="correo"
                   required
                 />
               </div>

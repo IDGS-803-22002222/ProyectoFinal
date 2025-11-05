@@ -1,9 +1,11 @@
 import { useState } from "react";
+import Equipos from "../catalogoequipos/Equipos";
+import Jugadores from "../catalogoJugadores/Jugadores";
 
 const Dashboard = ({ usuario, onCerrarSesion }) => {
   const [vistaActual, setVistaActual] = useState("inicio");
 
-  // Datos de ejemplo
+  // Datos de ejemplo para el inicio
   const estadisticas = {
     partidosHoy: 5,
     equiposActivos: 24,
@@ -174,18 +176,19 @@ const Dashboard = ({ usuario, onCerrarSesion }) => {
       {/* Navigation */}
       <nav className="bg-white shadow-md border-b-2 border-gray-200">
         <div className="px-6">
-          <div className="flex gap-1">
+          <div className="flex gap-1 overflow-x-auto">
             {[
               { id: "inicio", label: "INICIO", icon: "🏠" },
               { id: "partidos", label: "PARTIDOS", icon: "⚽" },
               { id: "equipos", label: "EQUIPOS", icon: "👕" },
+              { id: "jugadores", label: "JUGADORES", icon: "👤" },
               { id: "torneos", label: "TORNEOS", icon: "🏆" },
               { id: "estadisticas", label: "ESTADÍSTICAS", icon: "📊" },
             ].map((item) => (
               <button
                 key={item.id}
                 onClick={() => setVistaActual(item.id)}
-                className={`px-6 py-4 font-bold text-sm transition-all ${
+                className={`px-6 py-4 font-bold text-sm transition-all whitespace-nowrap ${
                   vistaActual === item.id
                     ? "text-blue-600 border-b-4 border-blue-600 bg-blue-50"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
@@ -491,19 +494,9 @@ const Dashboard = ({ usuario, onCerrarSesion }) => {
           </div>
         )}
 
-        {vistaActual === "equipos" && (
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-3xl font-black text-gray-900 mb-4">
-              👕 Gestión de Equipos
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Administra equipos, jugadores y cuerpo técnico.
-            </p>
-            <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-              + Nuevo Equipo
-            </button>
-          </div>
-        )}
+        {vistaActual === "equipos" && <Equipos />}
+
+        {vistaActual === "jugadores" && <Jugadores />}
 
         {vistaActual === "torneos" && (
           <div className="bg-white rounded-xl shadow-lg p-8">

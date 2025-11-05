@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import { PantallaInicial } from "./components/PantallaInicial";
 import Login from "./components/login/Login";
-import Dashboard from "./components/Dashboard/Dashboard";
+//import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/DashboardMejorado";
 import "./output.css";
 
 function App() {
