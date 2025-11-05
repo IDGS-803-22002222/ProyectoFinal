@@ -2,20 +2,21 @@ import { useState } from "react";
 import "./App.css";
 import { PantallaInicial } from "./components/PantallaInicial";
 import Login from "./components/login/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
 import "./output.css";
 
 function App() {
   const [mostrarLogin, setMostrarLogin] = useState(false);
   const [usuario, setUsuario] = useState(null);
 
+  const handleCerrarSesion = () => {
+    localStorage.removeItem("token");
+    setUsuario(null);
+    setMostrarLogin(false);
+  };
+
   if (usuario) {
-    return (
-      <div className="min-h-screen bg-gray-50 p-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold">Bienvenido {usuario.nombre}</h1>
-        </div>
-      </div>
-    );
+    return <Dashboard usuario={usuario} onCerrarSesion={handleCerrarSesion} />;
   }
 
   if (mostrarLogin) {
