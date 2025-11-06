@@ -4,6 +4,7 @@ import GestionPartidos from "./admin/GestionPartidos";
 import torneosService from "../services/torneosService";
 import partidosService from "../services/partidosService";
 import equiposService from "../services/equiposService";
+import CatalogoCanchas from "./admin/CatalogoCanchas";
 
 const Dashboard = ({ usuario, onCerrarSesion }) => {
   const [vistaActual, setVistaActual] = useState("inicio");
@@ -104,6 +105,12 @@ const Dashboard = ({ usuario, onCerrarSesion }) => {
           id: "torneos",
           label: "TORNEOS",
           icon: "🏆",
+          roles: ["Administrador"],
+        },
+        {
+          id: "canchas",
+          label: "CANCHAS",
+          icon: "⚽",
           roles: ["Administrador"],
         }
       );
@@ -489,6 +496,7 @@ const Dashboard = ({ usuario, onCerrarSesion }) => {
 
         {vistaActual === "partidos" && <GestionPartidos usuario={usuario} />}
         {vistaActual === "torneos" && <GestionTorneos />}
+        {vistaActual === "canchas" && <CatalogoCanchas />}
 
         {vistaActual === "equipos" && (
           <div className="bg-white rounded-xl shadow-lg p-8">
