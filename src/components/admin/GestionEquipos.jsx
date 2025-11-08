@@ -145,8 +145,10 @@ const GestionEquipos = () => {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-3xl font-black text-gray-900"> Equipos</h2>
-          <p className="text-gray-600">Gestion de Equipos</p>
+          <h2 className="text-3xl font-black text-gray-900">👕 Equipos</h2>
+          <p className="text-gray-600">
+            Gestiona equipos y genera QR para registro
+          </p>
         </div>
         <button
           onClick={abrirModalCrear}

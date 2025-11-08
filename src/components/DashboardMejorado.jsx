@@ -4,6 +4,7 @@ import GestionPartidos from "./admin/GestionPartidos";
 import torneosService from "../services/torneosService";
 import partidosService from "../services/partidosService";
 import equiposService from "../services/equiposService";
+import GestionEquipos from "./admin/GestionEquipos";
 
 const Dashboard = ({ usuario, onCerrarSesion }) => {
   const [vistaActual, setVistaActual] = useState("inicio");
@@ -495,20 +496,7 @@ const Dashboard = ({ usuario, onCerrarSesion }) => {
 
         {vistaActual === "partidos" && <GestionPartidos usuario={usuario} />}
         {vistaActual === "torneos" && <GestionTorneos />}
-
-        {vistaActual === "equipos" && (
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-3xl font-black text-gray-900 mb-4">
-              👕 Gestión de Equipos
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Administra equipos, jugadores y cuerpo técnico.
-            </p>
-            <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-700 transition">
-              + Nuevo Equipo
-            </button>
-          </div>
-        )}
+        {vistaActual === "equipos" && <GestionEquipos />}
 
         {vistaActual === "estadisticas" && (
           <div className="bg-white rounded-xl shadow-lg p-8">
