@@ -348,7 +348,13 @@ const GestionPartidos = ({ usuario }) => {
                     }
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
                     required
+                    min={new Date().toISOString().slice(0, 16)} // No permitir fechas pasadas
                   />
+                  {!nuevoPartido.fechaHora && (
+                    <p className="text-xs text-red-600 mt-1">
+                      Por favor, llena este campo.
+                    </p>
+                  )}
                 </div>
 
                 <div>
