@@ -33,6 +33,14 @@ const equiposService = {
     });
     return response.json();
   },
+  // Crear equipo (necesita endpoint en backend)
+  createEquipo: async (equipo) => {
+    const response = await fetchWithAuth("/Equipos", {
+      method: "POST",
+      body: JSON.stringify(equipo),
+    });
+    return response.json();
+  },
 };
 
 export default equiposService;
