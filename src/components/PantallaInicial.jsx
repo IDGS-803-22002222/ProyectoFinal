@@ -94,7 +94,6 @@ export const PantallaInicial = ({ onContinuar }) => {
           </div>
         </div>
       </header>
-
       {/* Hero Carousel */}
       <div className="relative h-[600px] overflow-hidden">
         {slides.map((slide, index) => (
